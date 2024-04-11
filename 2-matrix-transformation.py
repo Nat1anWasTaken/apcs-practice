@@ -2,7 +2,7 @@ meta = input().split()
 
 r, c, m = int(meta[0]), int(meta[1]), int(meta[2])
 
-matrix = [[int(char) for char in input().split()] for _ in range(3)]
+matrix = [[int(char) for char in input().split()] for _ in range(r)]
 
 operations = [int(num) for num in input().split()]
 
