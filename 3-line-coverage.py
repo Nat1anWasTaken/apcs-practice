@@ -2,16 +2,11 @@ from typing import List
 
 amount = int(input())
 
-lines: List[range] = []
+lines: List[range] = [range(int(line[0]), int(line[1])) for line in [input().split() for _ in range(amount)]]
 
-for _ in range(amount):
-    line = input().split()
-    lines.append(range(int(line[0]), int(line[1])))
-
-sequence = [0] * max([line.stop for line in lines])
+sequence = set()
 
 for line in lines:
-    for number in line:
-        sequence[number] = 1
+    sequence.update(line)
 
-print(sum(sequence))
+print(len(sequence))
