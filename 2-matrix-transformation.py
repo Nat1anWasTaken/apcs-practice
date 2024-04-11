@@ -15,11 +15,20 @@ def rotate(matrix):
     return [row for row in zip(*matrix[::-1])]
 
 
-for operation in operations:
-    if operation == 0:
+def rotate_anticlockwise(matrix):
+    for i in range(3):
         matrix = rotate(matrix)
+
+    return matrix
+
+
+operations.reverse()
+
+for operation in operations:
     if operation == 1:
         matrix = flip(matrix)
+    if operation == 0:
+        matrix = rotate_anticlockwise(matrix)
 
 print(len(matrix), len(matrix[0]))
 
